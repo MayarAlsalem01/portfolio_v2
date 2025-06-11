@@ -1,0 +1,76 @@
+'use client'
+import Staris from '@/components/Staris'
+import StrokeText from '@/components/StrokeText'
+import React, { ReactNode } from 'react'
+import { gsap } from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { SplitText } from 'gsap/SplitText'
+import Blob from '@/components/Blob/Blob'
+import SectionTitle from '@/components/SectionTitle/SectionTitle'
+import { SocialIcon } from 'react-social-icons'
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(useGSAP)
+
+// about me page
+export default function About() {
+    useGSAP(() => {
+
+        const t2 = gsap.timeline()
+
+        const split = SplitText.create('.t2', { type: 'lines' })
+        t2.from('.stroke', { scale: 0, rotate: 360, delay: 1 })
+            .from('.t', { autoAlpha: 0 })
+            .from(split.lines, { autoAlpha: 0, y: 20, x: 5, stagger: 0.2 })
+            .from('.icons', { autoAlpha: 0, })
+    })
+
+    return (
+        <Staris>
+            <div className=" md:h-[calc(100vh-64px)]   flex flex-col items-start justify-start md:justify-center gap-10 md:gap-0 px-4 lg:px-44  overflow-hidden relative   ">
+                <div className='mt-10 md:mt-0 md:pl-32 lg:pl-5 text-xl  lg:text-4xl'>
+                    <SectionTitle>About me</SectionTitle>
+                </div>
+                <div className="flex items-center relative bg-transparent">
+
+                    <div className="stroke text-[150px] lg:text-[350px] absolute md:static">
+                        <StrokeText>M</StrokeText>
+                    </div>
+
+                    {/* Your descriptive text */}
+                    <div className="relative z-10">
+                        <p className="t text-xl lg:text-4xl mb-4 lg:mb-6 tracking-[2px] font-bold uppercase">
+                            Mayar Alsalem Front <span className='text-base'>&ndash;</span> End Developer
+                        </p>
+                        <p className="t2 leading-loose text-md lg:text-lg opacity-80 text-balance">
+                            I’m a Software Engineering graduate from Damascus University with 1 year of focused front <span className='text-base'>&ndash;</span> end experience. Based in Damascus, Syria, I work on <span className='text-base'>&ndash;</span> site crafting pixel <span className='text-base'>&ndash;</span> perfect, high <span className='text-base'>&ndash;</span> performance UIs using <SpecialText>React.js</SpecialText>, <SpecialText>Next.js</SpecialText>, <SpecialText>Tailwind</SpecialText> ,<SpecialText>CSS</SpecialText>, and <SpecialText>TypeScript</SpecialText>.
+                            I take pride in writing <SpecialText>clean</SpecialText>, <SpecialText>maintainable</SpecialText> code, following industry best practices and patterns to ensure every project is robust and future <span className='text-base'>&ndash;</span> proof.
+                        </p>
+                        <div className='icons pb-8'>
+
+                            <SocialIcon className="absolute !w-10 !h-10" target='_blank' url="https://github.com/MayarAlsalem01" bgColor="transparent" />
+
+                            <SocialIcon className="absolute !w-10 !h-10 " target='_blank' url="https://t.me/Mayar_Alsalem" bgColor="transparent" />
+                            <SocialIcon className="absolute !w-10 !h-10" target='_blank' url="http://wa.me/+963937587079" bgColor="transparent" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* 
+        1) Removed Tailwind’s `blur-2xl`.
+        2) Added explicit `filter` and `WebkitFilter` inline.
+        3) Added `transform: translateZ(0)` + `WebkitTransform: translateZ(0)` to force GPU layer.
+        4) Added `backfaceVisibility: 'hidden'` (and prefix) so Safari won’t fallback to black.
+      */}
+            <div className='absolute h-full w-full top-0  left-0 pointer-events-none overflow-hidden '>
+                <div className='absolute h-full w-full top-1/2 -translate-x-1/2 left-0 lg:left-36 md:opacity-60'>
+                    <Blob />
+                </div>
+            </div>
+        </Staris>
+    )
+}
+function SpecialText({ children }: { children: ReactNode }) {
+    return <span className='text-purple-600'>{children}</span>
+}
