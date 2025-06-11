@@ -9,7 +9,7 @@ export default function Navbar() {
         <nav className='h-14 w-[98vw] py-8 flex  items-center justify-between px-8 relative  text-white z-30   '>
             <div className=' flex items-center gap-2 '>
                 <Image src={logo} alt='mayar alsalem' className='object-cover w-10 h-10' />
-                <h1 className='   text-2xl md:text-3xl font-poppins-regular  select-none'>Mayar Alsalem</h1>
+                <h1 className='   text-lg md:text-xl font-poppins-regular  select-none'>Mayar Alsalem</h1>
 
             </div>
 
@@ -27,7 +27,7 @@ export default function Navbar() {
                 </button>
             </div>
 
-            <div className={` w-full absolute !px-8 !py-3 left-0 transition-transform z-[3000] bg-black backdrop-blur-3xl    ${toggle ? 'top-full' : '-translate-y-40'}`}>
+            <div className={` w-full absolute !px-8 !py-3 left-0 transition-transform z-[3000] bg-black/80 backdrop-blur-3xl    ${toggle ? 'top-full' : '-translate-y-40'}`}>
                 <ul className={` relative w-full flex flex-col gap-6  `}>
                     <Link href={'/'}><li className='border-b border-white/20 pb-2' onClick={() => setToggle(false)}>Home</li></Link>
                     <Link href={'/about'}><li className='border-b border-white/20 pb-2' onClick={() => setToggle(false)}>About</li></Link>

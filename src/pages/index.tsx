@@ -23,52 +23,56 @@ export default function Home() {
     gsap.to('.banner', { x: '200vh', duration: 180 })
   })
   return (
-    <Staris>
-      <div className=" h-[calc(100vh-64px)]   overflow-hidden relative ">
-        <div className="flex items-center relative top-1/2 -translate-y-1/2 px-8 md:pl-28 ">
+    <>
+      <main>
+        <Staris>
+          <div className=" h-[calc(100vh-64px)]   overflow-hidden relative ">
+            <section className="flex items-center relative top-1/2 -translate-y-1/2 px-8 md:pl-28 ">
 
-          <div className="flex items-center   text-[250px] lg:text-[350px]">
-            <StrokeText>M</StrokeText>
-          </div>
-          <h2 className="split absolute left-14 md:left-44 lg:left-44 text-nowrap text-2xl md:text-3xl lg:text-6xl  leading-16 md:leading-28 text-white">
-            Code.<span className="opacity-60">Design</span>.<span className="opacity-60">Interaction</span>. <br />
+              <div className="flex items-center   text-[250px] lg:text-[350px]">
+                <StrokeText>M</StrokeText>
+              </div>
+              <h1 className="split absolute left-14 md:left-44 lg:left-44 text-nowrap text-2xl md:text-3xl lg:text-6xl  leading-16 md:leading-28 text-white">
+                Code.<span className="opacity-60">Design</span>.<span className="opacity-60">Interaction</span>. <br />
 
-            From Vision to User <br /> Experience.
-          </h2>
-        </div>
+                From Vision to User <br /> Experience.
+              </h1>
+            </section>
+            {/* banners */}
+            <div className="w-[150vw] h-[30px] md:h-[50px] px-5 flex items-center bg-[#212121] fixed  bottom-0 origin-bottom-left -rotate-[30deg] md:-rotate-[20deg] lg:-rotate-12 z-10">
+              <div className="banner relative flex items-center gap-16 font-roboto-regular -translate-x-[200vh] text-white">
+                {
+                  banner.map((l, i) => (
+                    <div key={i} className="flex items-center gap-16">
+                      <p className="text-sm text-nowrap">{l}</p>
+                      <span className="w-2 h-2 rounded-full bg-purple-600"></span>
+                    </div>
+                  ))
+                }
+              </div>
 
-        <div className="w-[150vw] h-[30px] md:h-[50px] px-5 flex items-center bg-[#212121] fixed  bottom-0 origin-bottom-left -rotate-[30deg] md:-rotate-[20deg] lg:-rotate-12 z-10">
-          <div className="banner relative flex items-center gap-16 font-roboto-regular -translate-x-[200vh] text-white">
-            {
-              banner.map((l, i) => (
-                <div key={i} className="flex items-center gap-16">
-                  <p className="text-sm text-nowrap">{l}</p>
-                  <span className="w-2 h-2 rounded-full bg-purple-600"></span>
-                </div>
-              ))
-            }
-          </div>
-
-        </div>
-        <div className="w-[230vw] h-[30px] md:h-[50px] flex items-center px-12 bg-[#FAFAFA] text-black fixed 
+            </div>
+            <div className="w-[230vw] h-[30px] md:h-[50px] flex items-center px-12 bg-[#FAFAFA] text-black fixed 
         -top-5 right-[-205%] origin-top-left rotate-[75deg]  
         md:w-full md:-top-10 md:-right-[60%] md:rotate-[55deg]
         lg:w-full lg:-top-10 -lg:right-1/2 lg:rotate-[42deg] 
         ">
-          <div className="banner relative flex items-center gap-16 font-roboto-regular -translate-x-[200vh] text-black">
-            {
-              banner.map((l, i) => (
-                <div key={i} className="flex items-center gap-16">
-                  <p className="text-sm text-nowrap">{l}</p>
-                  <span className="w-2 h-2 rounded-full bg-purple-600"></span>
-                </div>
-              ))
-            }
+              <div className="banner relative flex items-center gap-16 font-roboto-regular -translate-x-[200vh] text-black">
+                {
+                  banner.map((l, i) => (
+                    <div key={i} className="flex items-center gap-16">
+                      <p className="text-sm text-nowrap">{l}</p>
+                      <span className="w-2 h-2 rounded-full bg-purple-600"></span>
+                    </div>
+                  ))
+                }
+              </div>
+
+            </div>
           </div>
 
-        </div>
-      </div>
-
-    </Staris >
+        </Staris >
+      </main>
+    </>
   );
 }
