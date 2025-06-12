@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-
 export default function Document() {
   return (
     <Html lang="en">
@@ -10,6 +9,7 @@ export default function Document() {
           content="Mayar Alsalem – Front-End Developer specializing in Next.js, React, Tailwind, GSAP animations, and more."
         />
         <link rel="canonical" href="https://mayaralsalem.vercel.app" />
+        <link rel="icon" href="/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
