@@ -4,6 +4,7 @@ import StrokeText from "@/components/StrokeText";
 import { useGSAP } from "@gsap/react";
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
+import Head from "next/head";
 gsap.registerPlugin(useGSAP)
 gsap.registerPlugin(SplitText)
 export default function Home() {
@@ -24,6 +25,27 @@ export default function Home() {
   })
   return (
     <>
+      <Head>
+        <title>Mayar Alsalem</title>
+        <meta
+          name="description"
+          content="Mayar Alsalem – Front-End Developer specializing in Next.js, React, Tailwind, GSAP animations, and more."
+        />
+        <link rel="canonical" href="https://mayaralsalem.vercel.app" />
+        <link rel="icon" href="/favicon.ico" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Mayar Alsalem",
+              url: "https://mayaralsalem.vercel.app",
+              description: "Front-End Developer portfolio and services by Mayar Alsalem."
+            })
+          }}
+        />
+      </Head>
       <main>
         <Staris>
           <div className=" h-[calc(100vh-64px)]   overflow-hidden relative ">
